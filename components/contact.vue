@@ -8,26 +8,25 @@
           fill in the details down below, and I will get back to you as soon as
           possible! 
         </p>
-        <p style="color:red">(NOTE: yet to be implemented)</p>
       </div>
-      <div class="conactForm">
-        <form>
+      <div class="contactForm">
+        <form @submit.prevent="sendEmail">
           <div class="row100">
             <div class="inputBx50">
-              <input type="text" name="" placeholder="Full Name" />
+              <input type="text" v-model="name" name="name" placeholder="Full Name" />
             </div>
             <div class="inputBx50">
-              <input type="text" name="" placeholder="Email Address" />
+              <input type="email" v-model="user_email" name="user_email" placeholder="Email Address" />
             </div>
           </div>
           <div class="row100">
             <div class="inputBx100">
-              <textarea placeholder="Message"></textarea>
+              <textarea name="message" v-model="message" placeholder="Message"></textarea>
             </div>
           </div>
           <div class="row100">
             <div class="inputBx100">
-              <input type="submit" value="Send" name="" />
+              <input type="submit" value="Send" />
             </div>
           </div>
         </form>
@@ -35,6 +34,41 @@
     </div>
   </section>
 </template>
+
+<script>
+import emailjs from 'emailjs-com';
+
+export default {
+  name: 'Contact',
+  data() {
+    return {
+      name: '',
+      user_email: '',
+      message: ''
+    }
+  },
+  methods: {
+    sendEmail(e) {
+      if (this.name == '' || this.user_email == '' || this.message == ''){
+        alert("Please fill in the required information")
+      }
+      else{
+        emailjs.sendForm('service_3z0isq8', 'template_kuje89h', e.target, 'user_b0CvysnkdcqYgLtSWvWzV', {
+          name: this.name,
+          user_mail: this.user_email,
+          message: this.message
+        })
+
+      // Reset form field
+      this.name = ''
+      this.user_email = ''
+      this.message = ''
+      }
+    },
+  }
+}
+</script>
+
 
 <style scoped>
 .sec {
@@ -73,29 +107,29 @@ p {
 .contact p {
   color: #fff;
 }
-.conactForm {
+.contactForm {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
 }
-.conactForm form {
+.contactForm form {
   width: 100%;
 }
-.conactForm .row100 {
+.contactForm .row100 {
   display: flex;
   width: 100%;
 }
-.conactForm .row100 .inputBx50 {
+.contactForm .row100 .inputBx50 {
   width: 50%;
   margin: 0 20px;
 }
-.conactForm .row100 .inputBx100 {
+.contactForm .row100 .inputBx100 {
   width: 100%;
   margin: 0 20px;
 }
-.conactForm .row100 input,
-.conactForm .row100 textarea {
+.contactForm .row100 input,
+.contactForm .row100 textarea {
   position: relative;
   border: none;
   border-bottom: 1px solid #fff;
@@ -109,14 +143,14 @@ p {
   margin: 20px 0;
   resize: none;
 }
-.conactForm .row100 textarea {
+.contactForm .row100 textarea {
   height: 100px;
 }
-.conactForm .row100 input::placeholder,
-.conactForm .row100 textarea::placeholder {
+.contactForm .row100 input::placeholder,
+.contactForm .row100 textarea::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-.conactForm .row100 input[type="submit"] {
+.contactForm .row100 input[type="submit"] {
   background: #fff;
   color: #000;
   max-width: 100px;
@@ -136,11 +170,11 @@ p {
     line-height: 1em;
   }
 
-  .conactForm .row100 {
+  .contactForm .row100 {
     flex-direction: column;
   }
-  .conactForm .row100 .inputBx50,
-  .conactForm .row100 .inputBx100 {
+  .contactForm .row100 .inputBx50,
+  .contactForm .row100 .inputBx100 {
     width: 100%;
     margin: 0;
   }
