@@ -79,7 +79,7 @@ header ul li a {
   color: #fff;
   letter-spacing: 2px;
   font-weight: 300;
-  transition: 0.6s;
+  transition: 0.3s;
 }
 
 header.sticky .logo,
@@ -120,7 +120,7 @@ header.sticky ul li a {
     background: #000;
     z-index: 1;
     box-shadow: 0 10px 0 #000;
-    transition: 0.5s;
+    transition: 0.4s;
   }
   .toggle:after {
     content: "";
@@ -130,7 +130,7 @@ header.sticky ul li a {
     height: 2px;
     background: #000;
     z-index: 1;
-    transition: 0.5s;
+    transition: 0.4s;
   }
   header.active .toggle:before {
     top: 14px;
