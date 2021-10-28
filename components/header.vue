@@ -1,5 +1,5 @@
 <template>
-  <header id="header" v-bind:class="{ active: isToggled }">
+  <header id="header" v-bind:class="{ active: isToggled, sticky : scrollPosition > 850 }">
     <a class="navbar-brand" href="#"
       ><img class="logo logo1" src="../assets/images/logo_large_white.png" alt="" />
       <img class="logo logo2" src="../assets/images/logo_large_black.png" alt="" />
@@ -17,24 +17,21 @@
 
 <script>
 export default {
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
+  },
   data() {
     return {
       isToggled: false,
+      scrollPosition: null,
     };
   },
   methods: {
     toggle() {
       this.isToggled = !this.isToggled;
     },
-    handleScroll() {
-      var header = document.querySelector("header");
-      header.classList.toggle("sticky", window.scrollY > 0);
-    },
-    beforeMount() {
-      window.addEventListener("scroll", this.handleScroll);
-    },
-    beforeDestroy() {
-      window.removeEventListener("scroll", this.handleScroll);
+    updateScroll() {
+       this.scrollPosition = window.scrollY
     },
   },
 };
