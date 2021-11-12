@@ -1,12 +1,10 @@
 <template>
-  <header id="header" v-bind:class="{ active: isToggled, sticky : scrollPosition > 850 }">
+  <header id="header" v-bind:class="{ active: isToggled, sticky : scrollPosition > 50 }">
     <a class="navbar-brand" href="#"
-      ><img class="logo logo1" src="../assets/images/logo_large_white.png" alt="" />
-      <img class="logo logo2" src="../assets/images/logo_large_black.png" alt="" />
+      ><img id="logo" class="logo logo1" src="~/assets/images/logo_large_white.png" alt="" />
     </a>
 
     <ul>
-      <li><a href="#home" @click="toggle()">Home</a></li>
       <li><a href="#about" @click="toggle()">About me</a></li>
       <li><a href="#skills" @click="toggle()">My Skills</a></li>
       <li><a href="#contact" @click="toggle()">Contact</a></li>
@@ -32,7 +30,16 @@ export default {
     },
     updateScroll() {
        this.scrollPosition = window.scrollY
+       this.setContrast()
     },
+    setContrast() {
+      const style = getComputedStyle(document.getElementById("header"));
+      const rgb = style.backgroundColor.slice(4).split(",")
+      rgb[2] = rgb[2].split(")")[0]
+      const brightness = Math.round(((parseInt(rgb[0])*299)+(parseInt(rgb[1])*587)+(parseInt(rgb[2])*114))/1000)
+      console.log(brightness,rgb)
+      document.getElementById("logo").src = brightness > 125 ? require("~/assets/images/logo_large_black.png") : require("~/assets/images/logo_large_white.png") 
+    }
   },
 };
 </script>
@@ -46,9 +53,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.6s;
+  transition: padding 0.3s;
   padding: 40px 100px;
   z-index: 100000;
+  background: #000;
 }
 header.sticky {
   padding: 5px 100px;
@@ -79,11 +87,12 @@ header ul li a {
   transition: 0.3s;
 }
 
-header.sticky .logo,
 header.sticky ul li a {
   color: #000;
 }
-
+header.sticky ul{
+  margin-bottom: 0;
+}
 .toggle {
   display: none;
 }

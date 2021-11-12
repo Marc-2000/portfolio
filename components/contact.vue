@@ -26,7 +26,7 @@
           </div>
           <div class="row100">
             <div class="inputBx100">
-              <input type="submit" value="Send" />
+              <input id="submit" type="submit" value="Send" />
             </div>
           </div>
         </form>
@@ -63,6 +63,9 @@ export default {
       this.name = ''
       this.user_email = ''
       this.message = ''
+      
+      alert("Success! I'll respond as soon as possible")
+      document.getElementById("submit").disabled = "true";
       }
     },
   }
