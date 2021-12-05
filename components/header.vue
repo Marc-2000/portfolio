@@ -160,7 +160,7 @@ header.sticky ul{
 
   header ul {
     position: absolute;
-    top: 54px;
+    top: 39px;
     left: 0;
     width: 100%;
     height: calc(100vh);
