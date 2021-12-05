@@ -33,4 +33,8 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.swal2-shown {
+  padding-right: 0 !important;
+}
 </style>

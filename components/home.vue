@@ -1,11 +1,11 @@
 <template>
   <section class="banner" id="home">
     <h2>Welcome to my<br /><span>portfolio</span></h2>
-    <div class="arrow">
+    <a class="arrow" href="#about">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </a>
   </section>
 </template>
 
@@ -30,7 +30,7 @@
 }
 .banner h2 span {
   color: #06a8ff;
-  text-shadow:1px 1px 10px rgb(4, 23, 129), 1px 1px 10px #064d74;
+  text-shadow: 1px 1px 10px rgb(4, 23, 129), 1px 1px 10px #064d74;
 }
 
 @media (max-width: 992px) {
@@ -45,13 +45,13 @@
   }
 }
 
-@media (max-width:320px) {
+@media (max-width: 320px) {
   .banner h2 {
     font-size: 55px;
   }
 }
 
-@media (max-width:280px) {
+@media (max-width: 280px) {
   .banner h2 {
     font-size: 48px;
   }

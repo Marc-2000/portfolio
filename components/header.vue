@@ -1,7 +1,15 @@
 <template>
-  <header id="header" v-bind:class="{ active: isToggled, sticky : scrollPosition > 50 }">
+  <header
+    id="header"
+    v-bind:class="{ active: isToggled, sticky: scrollPosition > 50 }"
+  >
     <a class="navbar-brand" href="#"
-      ><img id="logo" class="logo logo1" src="~/assets/images/logo_large_white.png" alt="" />
+      ><img
+        id="logo"
+        class="logo logo1"
+        src="~/assets/images/logo_large_white.png"
+        alt=""
+      />
     </a>
 
     <ul>
@@ -16,7 +24,7 @@
 <script>
 export default {
   mounted() {
-    window.addEventListener('scroll', this.updateScroll);
+    window.addEventListener("scroll", this.updateScroll);
   },
   data() {
     return {
@@ -29,17 +37,25 @@ export default {
       this.isToggled = !this.isToggled;
     },
     updateScroll() {
-       this.scrollPosition = window.scrollY
-       this.setContrast()
+      this.scrollPosition = window.scrollY;
+      this.setContrast();
     },
     setContrast() {
       const style = getComputedStyle(document.getElementById("header"));
-      const rgb = style.backgroundColor.slice(4).split(",")
-      rgb[2] = rgb[2].split(")")[0]
-      const brightness = Math.round(((parseInt(rgb[0])*299)+(parseInt(rgb[1])*587)+(parseInt(rgb[2])*114))/1000)
-      console.log(brightness,rgb)
-      document.getElementById("logo").src = brightness > 125 ? require("~/assets/images/logo_large_black.png") : require("~/assets/images/logo_large_white.png") 
-    }
+      const rgb = style.backgroundColor.slice(4).split(",");
+      rgb[2] = rgb[2].split(")")[0];
+      const brightness = Math.round(
+        (parseInt(rgb[0]) * 299 +
+          parseInt(rgb[1]) * 587 +
+          parseInt(rgb[2]) * 114) /
+          1000
+      );
+      console.log(brightness, rgb);
+      document.getElementById("logo").src =
+        brightness > 125
+          ? require("~/assets/images/logo_large_black.png")
+          : require("~/assets/images/logo_large_white.png");
+    },
   },
 };
 </script>
@@ -90,23 +106,23 @@ header ul li a {
 header.sticky ul li a {
   color: #000;
 }
-header.sticky ul{
+header.sticky ul {
   margin-bottom: 0;
 }
 .toggle {
   display: none;
 }
 
-.logo2{
+.logo2 {
   display: none;
 }
 
 @media (max-width: 992px) {
-  .logo1{
+  .logo1 {
     display: none;
   }
 
-  .logo2{
+  .logo2 {
     display: block;
   }
 

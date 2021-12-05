@@ -1,6 +1,7 @@
 <template>
   <section class="sec about" id="about">
     <div class="content">
+      <img class="profilepic" src="~/assets/images/profilepicture.jpg" alt="" />
       <div class="mxw800p">
         <h3>Who am I?</h3>
         <p>
@@ -9,8 +10,8 @@
           Communication Technology (ICT/IT) at Fontys in Tilburg at the moment,
           to become a Software Engineer!
           <br /><br />
-          This is my personal website that I use for practicing hosting and coding. It is still a work-in-progress.
-          Curious?
+          This is my personal website that I use for practicing hosting and
+          coding. It is still a work-in-progress. Curious?
         </p>
         <a href="#skills" class="btn">Learn more!</a>
       </div>
@@ -19,6 +20,14 @@
 </template>
 
 <style scoped>
+.profilepic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right;
+  margin-bottom: 5%;
+}
 .sec {
   background: #fff;
   padding: 100px;

@@ -6,22 +6,36 @@
         <p>
           If you want to get in contact with me, or have a regular question,
           fill in the details down below, and I will get back to you as soon as
-          possible! 
+          possible!
         </p>
       </div>
       <div class="contactForm">
         <form @submit.prevent="sendEmail">
           <div class="row100">
             <div class="inputBx50">
-              <input type="text" v-model="name" name="name" placeholder="Full Name" />
+              <input
+                type="text"
+                v-model="name"
+                name="name"
+                placeholder="Full Name"
+              />
             </div>
             <div class="inputBx50">
-              <input type="email" v-model="user_email" name="user_email" placeholder="Email Address" />
+              <input
+                type="email"
+                v-model="user_email"
+                name="user_email"
+                placeholder="Email Address"
+              />
             </div>
           </div>
           <div class="row100">
             <div class="inputBx100">
-              <textarea name="message" v-model="message" placeholder="Message"></textarea>
+              <textarea
+                name="message"
+                v-model="message"
+                placeholder="Message"
+              ></textarea>
             </div>
           </div>
           <div class="row100">
@@ -36,40 +50,64 @@
 </template>
 
 <script>
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
 export default {
-  name: 'Contact',
+  name: "Contact",
   data() {
     return {
-      name: '',
-      user_email: '',
-      message: ''
-    }
+      name: "",
+      user_email: "",
+      message: "",
+    };
   },
   methods: {
     sendEmail(e) {
-      if (this.name == '' || this.user_email == '' || this.message == ''){
-        alert("Please fill in the required information")
-      }
-      else{
-        emailjs.sendForm('service_3z0isq8', 'template_kuje89h', e.target, 'user_b0CvysnkdcqYgLtSWvWzV', {
-          name: this.name,
-          user_mail: this.user_email,
-          message: this.message
-        })
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+        },
+        buttonsStyling: false,
+      });
 
-      // Reset form field
-      this.name = ''
-      this.user_email = ''
-      this.message = ''
-      
-      alert("Success! I'll respond as soon as possible")
-      document.getElementById("submit").disabled = "true";
+      if (this.name == "" || this.user_email == "" || this.message == "") {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Please fill in all of the details!",
+          showDenyButton: true,
+          showConfirmButton: false,
+          denyButtonText: "OK",
+        });
+      } else {
+        emailjs.sendForm(
+          "service_3z0isq8",
+          "template_kuje89h",
+          e.target,
+          "user_b0CvysnkdcqYgLtSWvWzV",
+          {
+            name: this.name,
+            user_mail: this.user_email,
+            message: this.message,
+          }
+        );
+
+        // Reset form field
+        this.name = "";
+        this.user_email = "";
+        this.message = "";
+
+        swalWithBootstrapButtons.fire({
+          icon: "success",
+          title: "Nice!",
+          text: "I'll respond as soon as possible",
+        });
+        document.getElementById("submit").disabled = "true";
       }
     },
-  }
-}
+  },
+};
 </script>
 
 
