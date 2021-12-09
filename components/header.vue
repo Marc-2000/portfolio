@@ -15,6 +15,7 @@
     <ul>
       <li><a href="#about" @click="toggle()">About me</a></li>
       <li><a href="#skills" @click="toggle()">My Skills</a></li>
+      <li><a href="#experience" @click="toggle()">Experience</a></li>
       <li><a href="#contact" @click="toggle()">Contact</a></li>
     </ul>
     <div class="toggle" @click="toggle()"></div>

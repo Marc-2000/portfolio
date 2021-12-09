@@ -10,39 +10,51 @@
         </p>
       </div>
       <div class="services">
-        <div class="box">
-          <div class="content">
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <p class="cardstyle">
+                All of the frontend work that I created during my study involved
+                HTML, CSS, Javascript and Typescript. <br /><br />
+                I have worked with different frameworks like Angular, React and
+                Nuxt.js
+              </p>
+            </div>
+          </div>
+          <div class="face face2">
             <h2>Design</h2>
-            <p>
-              All of the frontend work that I created during my study involved
-              HTML, CSS, Javascript and Typescript.
-              <br /><br />
-              I have worked with different frameworks like Angular, React and
-              Nuxt.js
-            </p>
           </div>
         </div>
-        <div class="box">
-          <div class="content">
-            <h2>Software Development</h2>
-            <p>
-              From the beginning of my study I have developed software using C#.
-              <br /><br />
-              I previously worked with Windows Forms, ASP .NET framework and
-              last but not least the .NET Core framework.
-            </p>
+
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <p class="cardstyle">
+                From the beginning of my study I have developed software using
+                C#. <br /><br />
+                I previously worked with Windows Forms, ASP .NET framework and
+                last but not least the .NET Core framework.
+              </p>
+            </div>
+          </div>
+          <div class="face face2">
+            <h2>Coding</h2>
           </div>
         </div>
-        <div class="box">
-          <div class="content">
+
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <p class="cardstyle">
+                One of the Cyber Security projects was to learn how you could
+                safely host your own projects. <br /><br />
+                It turned out to be very useful, because the website that you
+                are visiting right now is hosted on my own Raspberry Pi at home!
+              </p>
+            </div>
+          </div>
+          <div class="face face2">
             <h2>Self-Hosting</h2>
-            <p>
-              One of the Cyber Security projects was to learn how you could
-              safely host your own projects.
-              <br /><br />
-              It turned out to be very useful, because the website that you are
-              visiting right now is hosted on my own Raspberry Pi at home!
-            </p>
           </div>
         </div>
       </div>
@@ -52,7 +64,7 @@
 
 <style scoped>
 .sec {
-  background: #fff;
+  background: black;
   padding: 100px;
   min-height: 100vh;
   display: flex;
@@ -74,10 +86,29 @@ p {
   letter-spacing: 1px;
 }
 
+.box {
+  margin: 40px;
+  background-color: rgb(68, 68, 68); /* Needed for IEs */
+
+  -moz-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+  zoom: 1;
+}
+
 .mxw800p {
   max-width: 800px;
   margin: 0 auto;
 }
+
+.mxw800p > p,
+.mxw800p > h3 {
+  color: #fff;
+}
+
 h3 {
   font-size: 40px;
   font-weight: 200;
@@ -85,42 +116,78 @@ h3 {
 }
 
 .services {
-  position: relative;
+  max-width: 100vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-  max-width: 100%;
-  margin-top: 40px;
-}
-.services .box {
-  width: 350px;
+  grid-gap: 35px;
   margin: 0 auto;
-  margin-top: 25px;
-  background: #fff;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  padding: 40px 0;
 }
-.services .box h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
+.services .card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 15px;
+  border: #fff 2px solid;
+}
+.services .card .face {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services .card .face.face1 {
+  box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+.services .card .face.face1 h2 {
+  margin: 0;
+  padding: 0;
+}
+.services .card .face.face1 .cardstyle {
+  background-color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.services .card .face.face2 {
+  transition: 0.5s;
+}
+.services .card .face.face2 h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  color: black;
+  transition: 0.5s;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+.services .card:hover .face.face2 {
+  height: 60px;
+}
+.services .card:hover .face.face2 h2 {
+  font-size: 2em;
+}
+.services .card .face.face2 {
+  background-color: white;
+  border-radius: 10px;
 }
 
 @media (max-width: 992px) {
+  .mxw800p {
+    padding: 100px 50px 0px 50px;
+  }
   .sec {
-    padding: 100px 50px 50px 50px;
+    padding: inherit;
   }
   h3 {
     font-size: 36px;
     line-height: 1em;
-  }
-  .services {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-  }
-  .services .box {
-    width: 100%;
   }
 }
 </style>

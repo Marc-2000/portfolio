@@ -4,6 +4,7 @@
     <Home />
     <About />
     <Skills />
+    <Experience />
     <Contact />
     <Footer />
   </div>
