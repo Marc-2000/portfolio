@@ -51,7 +51,6 @@ export default {
           parseInt(rgb[2]) * 114) /
           1000
       );
-      console.log(brightness, rgb);
       document.getElementById("logo").src =
         brightness > 125
           ? require("~/assets/images/logo_large_black.png")
