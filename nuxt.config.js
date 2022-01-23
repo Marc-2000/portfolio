@@ -17,7 +17,7 @@ export default {
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/logo.png' },
             { rel: "stylesheet", type: "text/css", href: "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", },
-            { rel: "stylesheet", type: "text/css", href: "https://bootswatch.com/5/quartz/bootstrap.min.css" },
+            { rel: "stylesheet", type: "text/css", href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" },
         ],
         script: [
             { src: 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', body: true },

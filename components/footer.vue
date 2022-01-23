@@ -36,6 +36,7 @@
   text-decoration: none;
   width: 46px;
   height: 46px;
+  color: #fff;
 }
 
 .socialbutton:hover,

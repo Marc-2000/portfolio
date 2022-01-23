@@ -10,7 +10,7 @@
           Communication Technology (ICT/IT) at Fontys in Tilburg at the moment,
           to become a Software Engineer!
           <br /><br />
-          This is my personal website that I use for practicing hosting and
+          This is my personal website that I use to practice hosting and
           coding. It is still a work-in-progress. Curious?
         </p>
         <a href="#skills" class="btn">Learn more!</a>

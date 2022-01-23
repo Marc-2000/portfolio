@@ -20,8 +20,15 @@ body::-webkit-scrollbar {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 body {
+  background-image: none;
+  background-color: black;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
 * {

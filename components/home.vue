@@ -27,6 +27,7 @@
   text-transform: uppercase;
   text-align: center;
   line-height: 1em;
+  font-weight: 600;
 }
 .banner h2 span {
   color: #06a8ff;

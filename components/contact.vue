@@ -100,7 +100,7 @@ export default {
 
         swalWithBootstrapButtons.fire({
           icon: "success",
-          title: "Nice!",
+          title: "All done!",
           text: "I'll respond as soon as possible",
         });
         document.getElementById("submit").disabled = "true";

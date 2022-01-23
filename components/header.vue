@@ -36,6 +36,12 @@ export default {
   methods: {
     toggle() {
       this.isToggled = !this.isToggled;
+      if (this.isToggled == true){
+        this.disableScroll()
+      }
+      else{
+        this.enableScroll()
+      }
     },
     updateScroll() {
       this.scrollPosition = window.scrollY;
@@ -56,11 +62,20 @@ export default {
           ? require("~/assets/images/logo_large_black.png")
           : require("~/assets/images/logo_large_white.png");
     },
+    disableScroll() {
+      document.body.classList.add("stop-scrolling");
+    },
+
+    enableScroll() {
+      document.body.classList.remove("stop-scrolling");
+    },
   },
 };
 </script>
 
 <style scoped>
+
+
 header {
   position: fixed;
   top: 0;

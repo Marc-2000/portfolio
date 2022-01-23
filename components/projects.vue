@@ -2,15 +2,16 @@
   <section class="sec about" id="experience">
     <div class="content">
       <div class="mxw800p">
-        <h3>Experience</h3>
+        <h3>Projects</h3>
         <p>
           I have gained experience by making projects and participating in group
           assignments for some companies that collaborate with our school. In
           semester 5 I was an intern at the company FirstFocus. My assignment
           was to implement a new logging system for the company. I learned a lot
           about everything that involves custom software, automation and
-          hosting. There is a projects page coming soon!
+          hosting. If you want to learn more about my projects in the past, click the button down below!
         </p>
+        <a href="/projects" class="btn">Projects</a>
       </div>
     </div>
   </section>

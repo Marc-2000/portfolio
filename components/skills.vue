@@ -7,54 +7,66 @@
           Like I mentioned before, I am studying to become a Software Engineer.
           This means that I practice my code writing on backend and frontend
           work. I also learned a lot from my specialisation on Cyber Security.
+          Hover over the cards to find out more information!
         </p>
       </div>
-      <div class="services">
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <p class="cardstyle">
-                All of the frontend work that I created during my study involved
-                HTML, CSS, Javascript and Typescript. <br /><br />
-                I have worked with different frameworks like Angular, React and
-                Nuxt.js
-              </p>
-            </div>
+
+      <div class="container">
+        <div class="skillcard">
+          <div class="face front">
+            <img src="~/assets/images/research.png" alt="" />
+            <h3>Research</h3>
           </div>
-          <div class="face face2">
-            <h2>Design</h2>
+          <div class="face back">
+            <p>
+              As a bachelor of ICT, it was required to be able to conduct
+              scientific research for all created software products.
+              <br /><br />
+              I have conducted research on multiple occasions based of a useful
+              research framework called The DOT Framework.
+            </p>
           </div>
         </div>
-
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <p class="cardstyle">
-                From the beginning of my study I have developed software using
-                C#. <br /><br />
-                I previously worked with Windows Forms, ASP .NET framework and
-                last but not least the .NET Core framework.
-              </p>
-            </div>
+        <div class="skillcard">
+          <div class="face front">
+            <img src="~/assets/images/design.png" alt="" />
+            <h3>Design</h3>
           </div>
-          <div class="face face2">
-            <h2>Coding</h2>
+          <div class="face back">
+            <p>
+              All of the frontend work that I created during my study involved
+              HTML, CSS, Javascript and Typescript. <br /><br />
+              I have worked with different frameworks like Angular, React and
+              Nuxt.js
+            </p>
           </div>
         </div>
-
-        <div class="card">
-          <div class="face face1">
-            <div class="content">
-              <p class="cardstyle">
-                One of the Cyber Security projects was to learn how you could
-                safely host your own projects. <br /><br />
-                It turned out to be very useful, because the website that you
-                are visiting right now is hosted on my own Raspberry Pi at home!
-              </p>
-            </div>
+        <div class="skillcard">
+          <div class="face front">
+            <img src="~/assets/images/code.png" alt="" />
+            <h3>Coding</h3>
           </div>
-          <div class="face face2">
-            <h2>Self-Hosting</h2>
+          <div class="face back">
+            <p>
+              From the beginning of my study I have developed software using C#.
+              <br /><br />
+              I previously worked with Windows Forms, ASP .NET framework and
+              last but not least the .NET Core framework.
+            </p>
+          </div>
+        </div>
+        <div class="skillcard">
+          <div class="face front">
+            <img src="~/assets/images/hosting.png" alt="" />
+            <h3>Hosting</h3>
+          </div>
+          <div class="face back">
+            <p>
+              One of the Cyber Security projects was to learn how you could
+              safely host your own projects. <br /><br />
+              It turned out to be very useful, because the website that you are
+              visiting right now is hosted on my own Raspberry Pi at home!
+            </p>
           </div>
         </div>
       </div>
@@ -63,6 +75,86 @@
 </template>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  padding-bottom: 20px;
+  max-width: 1500px;
+}
+
+.skillcard {
+  width: 300px;
+  height: 450px;
+  position: relative;
+  background: #fff;
+  border-radius: 15px;
+}
+.skillcard .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skillcard .face.front {
+  background: #06a8ff;
+  box-shadow: 1px 1px 10px #041781, 1px 1px 10px #064d74;
+  z-index: 100;
+  transition: all 0.225s ease-in-out;
+  overflow: hidden;
+}
+.skillcard .face.front img {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  transition: all 0.225s ease-in-out;
+}
+.skillcard .face.front h3 {
+  margin-top: 10px;
+  font-size: 2.5em;
+  font-weight: 600;
+  transform: scale(1);
+  transition: all 0.225s ease-in-out;
+}
+.skillcard .face.back {
+  padding-top: 25%;
+}
+.skillcard .face.back p {
+  margin: 0;
+  max-width: 85%;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+  text-align: center;
+}
+.skillcard:hover .front {
+  top: 30px;
+  left: calc(50% - 40px);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.skillcard:hover .front img {
+  width: 50px;
+  height: 50px;
+  margin-top: 64px;
+}
+.skillcard:hover .front h3 {
+  transform: scale(0);
+}
+.skillcard:hover .back p {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .sec {
   background: black;
   padding: 100px;
@@ -78,30 +170,10 @@
   width: 100%;
 }
 
-p {
-  position: relative;
-  font-size: 18px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.box {
-  margin: 40px;
-  background-color: rgb(68, 68, 68); /* Needed for IEs */
-
-  -moz-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
-  -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
-  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
-
-  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
-  zoom: 1;
-}
-
 .mxw800p {
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 2em;
 }
 
 .mxw800p > p,
@@ -113,69 +185,6 @@ h3 {
   font-size: 40px;
   font-weight: 200;
   margin-bottom: 10px;
-}
-
-.services {
-  max-width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 35px;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-.services .card {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  margin: 0 auto;
-  background: #000;
-  border-radius: 15px;
-  border: #fff 2px solid;
-}
-.services .card .face {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.services .card .face.face1 {
-  box-sizing: border-box;
-  padding: 0px 20px 20px 20px;
-}
-.services .card .face.face1 h2 {
-  margin: 0;
-  padding: 0;
-}
-.services .card .face.face1 .cardstyle {
-  background-color: #fff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.services .card .face.face2 {
-  transition: 0.5s;
-}
-.services .card .face.face2 h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 2em;
-  color: black;
-  transition: 0.5s;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-}
-.services .card:hover .face.face2 {
-  height: 60px;
-}
-.services .card:hover .face.face2 h2 {
-  font-size: 2em;
-}
-.services .card .face.face2 {
-  background-color: white;
-  border-radius: 10px;
 }
 
 @media (max-width: 992px) {
