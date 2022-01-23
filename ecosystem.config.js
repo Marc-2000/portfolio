@@ -6,7 +6,7 @@ module.exports = {
         instances: 'max', // Or a number of instances
         script: './node_modules/nuxt/bin/nuxt.js',
         args: "start",
-        cwd: '/home/pi/Desktop/portfolio',
+        cwd: '/home/raspberrymarc/Desktop/portfolio',
         env: {
             NODE_ENV: 'development'
         },
