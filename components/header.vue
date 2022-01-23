@@ -7,16 +7,16 @@
       ><img
         id="logo"
         class="logo logo1"
-        src="~/assets/images/logo_large_white.png"
+        src="~/assets/images/logo_large_white.webp"
         alt=""
       />
     </a>
 
     <ul>
-      <li><a href="#about" @click="toggle()">About me</a></li>
-      <li><a href="#skills" @click="toggle()">My Skills</a></li>
-      <li><a href="#experience" @click="toggle()">Experience</a></li>
-      <li><a href="#contact" @click="toggle()">Contact</a></li>
+      <li><a href="#about" @click="toggle(),toggleOff()">About me</a></li>
+      <li><a href="#skills" @click="toggle(),toggleOff()">My Skills</a></li>
+      <li><a href="#experience" @click="toggle(),toggleOff()">Experience</a></li>
+      <li><a href="#contact" @click="toggle(),toggleOff()">Contact</a></li>
     </ul>
     <div class="toggle" @click="toggle()"></div>
   </header>
@@ -36,12 +36,14 @@ export default {
   methods: {
     toggle() {
       this.isToggled = !this.isToggled;
-      if (this.isToggled == true){
-        this.disableScroll()
+      if (this.isToggled == true) {
+        this.disableScroll();
+      } else if (this.isToggled == false) {
+        this.enableScroll();
       }
-      else{
-        this.enableScroll()
-      }
+    },
+    toggleOff() {
+      document.body.classList.remove("stop-scrolling");
     },
     updateScroll() {
       this.scrollPosition = window.scrollY;
@@ -59,8 +61,8 @@ export default {
       );
       document.getElementById("logo").src =
         brightness > 125
-          ? require("~/assets/images/logo_large_black.png")
-          : require("~/assets/images/logo_large_white.png");
+          ? require("~/assets/images/logo_large_black.webp")
+          : require("~/assets/images/logo_large_white.webp");
     },
     disableScroll() {
       document.body.classList.add("stop-scrolling");
@@ -74,8 +76,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 header {
   position: fixed;
   top: 0;

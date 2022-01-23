@@ -1,7 +1,7 @@
 <template>
   <section class="sec about" id="about">
     <div class="content">
-      <img class="profilepic" src="~/assets/images/profilepicture.jpg" alt="" />
+      <img class="profilepic" src="~/assets/images/profilepicture.webp" alt="" />
       <div class="mxw800p">
         <h3>Who am I?</h3>
         <p>

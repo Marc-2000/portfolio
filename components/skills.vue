@@ -14,7 +14,7 @@
       <div class="container">
         <div class="skillcard">
           <div class="face front">
-            <img src="~/assets/images/research.png" alt="" />
+            <img src="~/assets/images/research.webp" alt="" />
             <h3>Research</h3>
           </div>
           <div class="face back">
@@ -29,7 +29,7 @@
         </div>
         <div class="skillcard">
           <div class="face front">
-            <img src="~/assets/images/design.png" alt="" />
+            <img src="~/assets/images/design.webp" alt="" />
             <h3>Design</h3>
           </div>
           <div class="face back">
@@ -43,7 +43,7 @@
         </div>
         <div class="skillcard">
           <div class="face front">
-            <img src="~/assets/images/code.png" alt="" />
+            <img src="~/assets/images/code.webp" alt="" />
             <h3>Coding</h3>
           </div>
           <div class="face back">
@@ -57,7 +57,7 @@
         </div>
         <div class="skillcard">
           <div class="face front">
-            <img src="~/assets/images/hosting.png" alt="" />
+            <img src="~/assets/images/hosting.webp" alt="" />
             <h3>Hosting</h3>
           </div>
           <div class="face back">
