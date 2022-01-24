@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p style="color:#fff;text-align:center">Coming soon!</p>
+    <Projects />
+    <Footer />
   </div>
 </template>
 
@@ -20,7 +21,7 @@ body {
 </style>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 
-export default Vue.extend({})
+export default Vue.extend({});
 </script>
