@@ -9,10 +9,8 @@
           semester 5 I was an intern at the company FirstFocus. My assignment
           was to implement a new logging system for the company. I learned a lot
           about everything that involves custom software, automation and
-          hosting. If you want to learn more about my projects in the past,
-          click the button down below!
+          hosting. There is a projects page coming soon!
         </p>
-        <NuxtLink class="btn" to="/projects">Projects</NuxtLink>
       </div>
     </div>
   </section>
