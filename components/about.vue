@@ -1,5 +1,5 @@
 <template>
-  <section class="sec about" id="about">
+  <section class="sec" id="about">
     <div class="content">
       <img class="profilepic" src="~/assets/images/profilepicture.webp" alt="" />
       <div class="mxw800p">

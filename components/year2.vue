@@ -1,17 +1,17 @@
 <template>
-  <section class="sec about" id="experience">
+  <section class="sec">
     <div class="content">
       <div class="mxw800p">
-        <h3>Projects</h3>
+        <h3 class="underline">Year 2</h3>
         <p>
-          I have gained experience by making projects and participating in group
-          assignments for some companies that collaborate with our school. In
-          semester 5 I was an intern at the company FirstFocus. My assignment
-          was to implement a new logging system for the company. I learned a lot
-          about everything that involves custom software, automation and
-          hosting. If you want to learn more about my projects in the past, click the button down below!
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum."
         </p>
-        <a href="/projects" class="btn">Projects</a>
       </div>
     </div>
   </section>
@@ -59,6 +59,12 @@ h3 {
   font-size: 40px;
   font-weight: 200;
   margin-bottom: 10px;
+}
+
+.underline{
+    display:inline-block;
+    border-bottom:1px solid black;
+    padding-bottom:1px;
 }
 
 .services {
