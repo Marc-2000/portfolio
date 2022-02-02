@@ -13,7 +13,7 @@
           This is my personal website that I use to practice hosting and
           coding. It is still a work-in-progress. Curious?
         </p>
-        <a href="#skills" class="btn">Learn more!</a>
+        <a href="#skills" class="btn">Learn more</a>
       </div>
     </div>
   </section>
