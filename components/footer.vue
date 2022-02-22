@@ -24,7 +24,7 @@
           rel="noopener noreferrer"
         ></a>
       </section>
-      <p style="color: white">© 2021 Copyright: Marc den Hollander</p>
+      <p style="color: white">© 2022 Copyright: Marc den Hollander</p>
     </div>
   </footer>
 </template>

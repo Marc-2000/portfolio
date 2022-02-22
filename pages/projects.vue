@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Projects />
+    <Year1 />
+    <Year2 />
+    <Year3 />
+    <Year4 />
     <Footer />
   </div>
 </template>
