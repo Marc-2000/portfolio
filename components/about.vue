@@ -5,8 +5,8 @@
       <div class="mxw800p">
         <h3>Who am I?</h3>
         <p>
-          As you might have figured out from the URL, my name is Marc den
-          Hollander and I am 21 years old. I am studying Information and
+          As you might have figured out from the name of this website, my name is Marc den
+          Hollander and I am 22 years old. I am studying Information and
           Communication Technology (ICT/IT) at Fontys in Tilburg at the moment,
           to become a Software Engineer!
           <br /><br />
